@@ -8,7 +8,13 @@ if(isset($_POST['send']))
     $from = $_POST['from-email'];
     $headers = "From : $from";
 
-    mail($to , $subject , $message , $headers);
-    echo "mail sent";
+    
+    if(mail($to , $subject , $message , $headers))
+    {
+        echo "mail sent";
+    }
+    else{
+        echo "not sent";
+    }
 }
 ?>
